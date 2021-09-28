@@ -1,39 +1,58 @@
-﻿@page "/"
+﻿@*<Dropdown Placement="@PlacementType.BottomCenter">
+        <ChildContent>
+            <Button>Button <Icon Type="down" /></Button>
 
-<Upload Action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-        Name="files" 
-        Drag
-        Multiple
-        OnSingleCompleted="OnSingleCompleted">
-    <p class="ant-upload-drag-icon">
-        <Icon Type="inbox" />
-    </p>
-    <p class="ant-upload-text">Click or drag file to this area to upload</p>
-    <p class="ant-upload-hint">
-        Support for a single or bulk upload. Strictly prohibit from uploading company data or other
-        band files
-    </p>
-</Upload>
+        </ChildContent>
+    </Dropdown>*@
+@page  "/"
+@*<div style="max-width:200px"  class="tag-colorful-demo">
+        <h3>Tìm kiếm theo từ khóa</h3>
+        <Tag>bán đất gần đại lộ đông tây</Tag>
+        <Tag>cần bán đât giá rẻ tại tp hcm</Tag>
+        <Tag>bán nhà đất giá rẻ quận thủ đức</Tag>
+        <Tag>bán nhà quận 2 </Tag>
+        <Tag>bán nhà liền kề</Tag>
+    </div>
 
-@code {
-
-    void OnSingleCompleted(UploadInfo fileinfo)
-    {
-        if (fileinfo.File.State == UploadState.Success)
-        {
-            var result = fileinfo.File.GetResponse<ResponseModel>();
-            fileinfo.File.Url = result.url;
+    <style>
+        .tag-colorful-demo > * {
+            margin-bottom: 12px;
+            margin-right: 8px;
         }
+    </style>*@
+
+
+
+<div style="max-width:800px" class=".space-align-block">
+    <Space>
+        <SpaceItem>
+            <Image Preview="false" Width="200px" Height="200px" Src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+        </SpaceItem>
+        <SpaceItem Class="pl-3">
+            <Text Class="d-flex justify-content-start" style="color:blue" Strong>Chính chủ - Cần tiền bán gấp văn phòng - Shop thương mại DA LA</Text>
+            <br />
+            <div class="d-flex justify-content-start">
+                <Text Strong>900 triệu </Text>
+                <span>&nbsp;·&nbsp;</span>
+                <Text Strong>21 m2</Text>
+                <span>&nbsp;·&nbsp;</span>
+                <Text>Quận 2, Hồ Chí Minh</Text>
+            </div>
+            <br />
+            <Text>
+                Chính chủ cần bán gấp căn Văn phòng - thương mại. Đang có HĐ cho thuê 4tr/tháng. DT 21m2. Khu vực dân cư rất đông, tiện làm văn phòng, văn phòng đại diện, các shop quần áo, phụ kiện. Các cửa hàng tiệ...
+            </Text>
+        </SpaceItem>
+    </Space>
+</div>
+<style>
+    .space-align-block {
+        margin: 8px 4px;
+        border: 1px solid #40a9ff;
+        padding: 4px;
+        flex: none;
     }
+</style>
+@code{
 
-    public class ResponseModel
-    {
-        public string name { get; set; }
-
-        public string status { get; set; }
-
-        public string url { get; set; }
-
-        public string thumbUrl { get; set; }
-    }
 }
