@@ -1,177 +1,257 @@
 ﻿@page "/"
 
-@*<Counter @bind-CurrentCount="@_counter"/>
+@{
+    string style = "background: #0092ff; padding: 8px 0;";
+    Dictionary<string, int> gutter = new()
+    {
+        ["xs"] = 8,
+        ["sm"] = 16,
+        ["md"] = 24,
+        ["lg"] = 32,
+        ["xl"] = 48,
+        ["xxl"] = 64
+    };
+}
+<div>
+    <Divider Orientation="left">Horizontal</Divider>
+    <Row Gutter="16">
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+    </Row>
+    <Divider Orientation="left">Responsive</Divider>
+    <Row Gutter="@gutter">
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+    </Row>
+    <Divider Orientation="left">Vertical</Divider>
+    <Row Gutter="(16,24)">
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+        <AntDesign.Col Class="gutter-row" Span="6">
+            <div style="@style">col-6</div>
+        </AntDesign.Col>
+    </Row>
+
+</div>
+
+<style>
+    .gutter-box {
+        padding: 8px 0;
+        background: #00a0e9;
+    }
+</style>
+
+@*<Counter @bind-CurrentCount="@_counter" />
 
     @code{
         int _counter = 0;
     }*@
 
-@code{
-    Carousel _carousel;
-}
-<div class="button-container d-flex justify-content-end">
-    <Button OnClick="@( _=>_carousel.Previous())" Size="small">Prev</Button>
-    <Button OnClick="@( _=>_carousel.Next())" Size="small">Next</Button>
-
-</div>
-<div style="width:100%; height:600px">
-    <Carousel DotPosition="@CarouselDotPosition.Bottom" @ref="_carousel">
-        <CarouselSlick>
-            <Space Style="padding-bottom:30px">
-                <SpaceItem>
-                    <Card Title="Default size card" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-                <SpaceItem>
-                    <Card Title="Default size card" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-            </Space>
-
-        </CarouselSlick>
-        <CarouselSlick>
-            <Space Style="padding-bottom:30px">
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-            </Space>
-        </CarouselSlick>
-        <CarouselSlick>
-            <Space Style="padding-bottom:30px">
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-            </Space>
-        </CarouselSlick>
-        <CarouselSlick>
-            <Space Style="padding-bottom:30px">
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-                <SpaceItem>
-                    <Card Title="@("Default size card")" Style="width:300px;">
-                        <Extra>
-                            <a>More</a>
-                        </Extra>
-                        <Body>
-                            <p>Card content</p>
-                        </Body>
-                    </Card>
-                </SpaceItem>
-            </Space>
-        </CarouselSlick>
-    </Carousel>
-</div>
-
-<style>
-    .ant-carousel .slick-slide {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        height: auto;
-        line-height: normal;
-        background: #364d79;
-        overflow: hidden;
+@*@code{
+        Carousel _carousel;
     }
+    <div class="button-container d-flex justify-content-end">
+        <Button OnClick="@( _=>_carousel.Previous())" Size="small">Prev</Button>
+        <Button OnClick="@( _=>_carousel.Next())" Size="small">Next</Button>
 
-    .ant-carousel .slick-dots {
-        display: none !important;
-    }
+    </div>
+    <div style="width:100%; height:600px">
+        <Carousel DotPosition="@CarouselDotPosition.Bottom" @ref="_carousel">
+            <CarouselSlick>
+                <Space Style="padding-bottom:30px">
+                    <SpaceItem>
+                        <Card Title="Default size card" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                    <SpaceItem>
+                        <Card Title="Default size card" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                </Space>
 
-    .ant-carousel .slick-slide h3 {
-        color: #fff;
-    }
-</style>
+            </CarouselSlick>
+            <CarouselSlick>
+                <Space Style="padding-bottom:30px">
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                </Space>
+            </CarouselSlick>
+            <CarouselSlick>
+                <Space Style="padding-bottom:30px">
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                </Space>
+            </CarouselSlick>
+            <CarouselSlick>
+                <Space Style="padding-bottom:30px">
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                    <SpaceItem>
+                        <Card Title="@("Default size card")" Style="width:300px;">
+                            <Extra>
+                                <a>More</a>
+                            </Extra>
+                            <Body>
+                                <p>Card content</p>
+                            </Body>
+                        </Card>
+                    </SpaceItem>
+                </Space>
+            </CarouselSlick>
+        </Carousel>
+    </div>
+
+    <style>
+        .ant-carousel .slick-slide {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            height: auto;
+            line-height: normal;
+            background: #364d79;
+            overflow: hidden;
+        }
+
+        .ant-carousel .slick-dots {
+            display: none !important;
+        }
+
+        .ant-carousel .slick-slide h3 {
+            color: #fff;
+        }
+    </style>*@
