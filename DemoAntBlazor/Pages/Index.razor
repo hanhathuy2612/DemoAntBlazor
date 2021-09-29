@@ -1,29 +1,298 @@
 ﻿@page "/"
+@*danh sach*@
+@*<div style="max-width:800px;">
+            <Space Style="border: 1px solid #dedede; border-radius:5px">
+                <SpaceItem>
+                    <Image Preview="false" Width="200px" Height="200px" Src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                </SpaceItem>
+                <SpaceItem Class="pl-3">
+                    <Text Class="d-flex justify-content-start" style="color:blue" Strong>Chính chủ - Cần tiền bán gấp văn phòng - Shop thương mại DA LA</Text>
+                    <br />
+                    <div class="d-flex justify-content-start">
+                        <Text Strong>900 triệu </Text>
+                        <span>&nbsp;·&nbsp;</span>
+                        <Text Strong>21 m2</Text>
+                        <span>&nbsp;·&nbsp;</span>
+                        <Text>Quận 2, Hồ Chí Minh</Text>
+                    </div>
+                    <br />
+                    <Text>
+                        Chính chủ cần bán gấp căn Văn phòng - thương mại. Đang có HĐ cho thuê 4tr/tháng. DT 21m2. Khu vực dân cư rất đông, tiện làm văn phòng, văn phòng đại diện, các shop quần áo, phụ kiện. Các cửa hàng tiệ...
+                    </Text>
+                </SpaceItem>
+            </Space>
+    </div>*@
+@*carousel*@
+@*<div style="max-width: 700px">
+
+        <div>
+            <Carousel @ref="_carousel">
+                <CarouselSlick>
+                    <Image Width="300px" Src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                </CarouselSlick>
+                <CarouselSlick>
+                    <Image Width="300px" Src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                </CarouselSlick>
+                <CarouselSlick>
+                    <Image Width="300px" Src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                </CarouselSlick>
+                <CarouselSlick>
+                    <Image Width="300px" Src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                </CarouselSlick>
+            </Carousel>
+        </div>
+        <div class="button-container">
+            <Button OnClick="@( _=>_carousel.Previous())" Size="small">Prev</Button>
+            <div>
+                @foreach (int i in Enumerable.Range(0, 4))
+                {
+                    <Image style="margin-left: 5px" Width="50px" OnClick="@( _=>_carousel.GoTo(i))" Preview="false" Src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
+                }
+            </div>
+            <Button OnClick="@( _=>_carousel.Next())" Size="small">Next</Button>
+
+        </div>
+    </div>
 
 
-<div style="max-width:800px;">
-        <Space Style="border: 1px solid #dedede; border-radius:5px">
-            <SpaceItem>
-                <Image Preview="false" Width="200px" Height="200px" Src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png" />
-            </SpaceItem>
-            <SpaceItem Class="pl-3">
-                <Text Class="d-flex justify-content-start" style="color:blue" Strong>Chính chủ - Cần tiền bán gấp văn phòng - Shop thương mại DA LA</Text>
-                <br />
-                <div class="d-flex justify-content-start">
-                    <Text Strong>900 triệu </Text>
-                    <span>&nbsp;·&nbsp;</span>
-                    <Text Strong>21 m2</Text>
-                    <span>&nbsp;·&nbsp;</span>
-                    <Text>Quận 2, Hồ Chí Minh</Text>
-                </div>
-                <br />
-                <Text>
-                    Chính chủ cần bán gấp căn Văn phòng - thương mại. Đang có HĐ cho thuê 4tr/tháng. DT 21m2. Khu vực dân cư rất đông, tiện làm văn phòng, văn phòng đại diện, các shop quần áo, phụ kiện. Các cửa hàng tiệ...
-                </Text>
-            </SpaceItem>
-        </Space>
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 4px;
+        }
+
+        .ant-carousel .slick-slide {
+            text-align: center;
+            height: 300px;
+            line-height: 300px;
+            background: #364d79;
+            overflow: hidden;
+        }
+
+            .ant-carousel .slick-slide h3 {
+                color: #fff;
+            }
+    </style>
+
+    @code{
+        Carousel _carousel;
+    }*@
+
+
+@*<div style="max-width: 700px">
+        <Descriptions>
+            <DescriptionsItem Title="Ngày đăng">
+                28/09/2021
+            </DescriptionsItem>
+            <DescriptionsItem Title="Ngày hết hạn">
+                08/10/2021
+            </DescriptionsItem>
+            <DescriptionsItem Title="Loại tin">
+                Tin Vip đặc biệt
+            </DescriptionsItem>
+            <DescriptionsItem Title="Mã tin">
+                30844318
+            </DescriptionsItem>
+        </Descriptions>
+    </div>*@
+@*<div style="max-width: 300px">
+    <Divider Orientation="left" Style="font-weight:bold">Thông tin mô tả</Divider>
+    <p>
+        Chính chủ bán nhà khu vực Hà Đông, sổ đỏ chính chủ không qua môi giới giá từ 1 tỷ 350.
+        Diện tích từ 35m2 ngõ rộng ô tô đỗ cửa thoải mái, nằm ở khu vực đông dân với nhiều tiện ích xung quanh như trường học các cấp, chợ, bệnh viện, công viên...
+    </p>
+    </div>*@
+<!--<div style="max-width: 300px">-->
+@*<Descriptions Title="Responsive Descriptions" Bordered>
+        <DescriptionsItem Title="Product" >Cloud Database</DescriptionsItem>
+        <br />
+        <DescriptionsItem Title="Billing" >Prepaid</DescriptionsItem>
+        <DescriptionsItem Title="Config Info" >
+            Data disk type: MongoDB
+            <br />
+            Database version: 3.4
+            <br />
+            Package: dds.mongo.mid
+            <br />
+            Storage space: 10 GB
+            <br />
+            Replication_factor:3
+            <br />
+            Region: East China 1
+            <br />
+        </DescriptionsItem>
+    </Descriptions>*@
+<!--<Divider Orientation="left" Style="font-weight:bold">Left Text</Divider>
+</div>-->
+
+<div style="width:700px; height:600px">
+    <div class="button-container d-flex justify-content-end">
+        <Button OnClick="@( _=>_carousel.Previous())" Size="small">Prev</Button>
+        <Button OnClick="@( _=>_carousel.Next())" Size="small">Next</Button>
+    </div>
+    <Carousel DotPosition="@CarouselDotPosition.Bottom" @ref="_carousel">
+        <CarouselSlick>
+            <Space Style="padding-bottom:30px">
+                <SpaceItem>
+                    <Card Title="Default size card" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+                <SpaceItem>
+                    <Card Title="Default size card" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+            </Space>
+
+        </CarouselSlick>
+        <CarouselSlick>
+            <Space Style="padding-bottom:30px">
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+            </Space>
+        </CarouselSlick>
+        <CarouselSlick>
+            <Space Style="padding-bottom:30px">
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+            </Space>
+        </CarouselSlick>
+        <CarouselSlick>
+            <Space Style="padding-bottom:30px">
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+                <SpaceItem>
+                    <Card Title="@("Default size card")" Style="width:300px;">
+                        <Extra>
+                            <a>More</a>
+                        </Extra>
+                        <Body>
+                            <p>Card content</p>
+                        </Body>
+                    </Card>
+                </SpaceItem>
+            </Space>
+        </CarouselSlick>
+    </Carousel>
 </div>
 
-@code{
+<style>
+    .ant-carousel .slick-slide {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        line-height: normal;
+        background: #364d79;
+        overflow: hidden;
+    }
 
+    .ant-carousel .slick-dots {
+        display: none !important;
+    }
+
+    .ant-carousel .slick-slide h3 {
+        color: #fff;
+    }
+</style>
+
+@code
+{
+    Carousel _carousel;
 }
