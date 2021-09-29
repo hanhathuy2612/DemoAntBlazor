@@ -1,17 +1,27 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
+    <div class="nav">
+        <a>
+            MaicoGroup
+        </a>
         <NavMenu />
     </div>
-
-    <div class="main">
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <div class="content px-4">
-            @Body
-        </div>
-    </div>
 </div>
+@Body
+<style>
+    .nav {
+        display: flex;
+        box-shadow:0px 0px 1px 1px #333;
+        background-color: #fff;
+        float: right;
+        width: 100%;
+        justify-content: space-between;
+        margin-right: 0;
+    }
+
+        .nav a {
+            margin-left: 20px;
+            font-size: 36px;
+        }
+</style>
