@@ -1,20 +1,37 @@
-﻿
-
+﻿@inject IAverageCountService AverageCountService
+ 
 <h1>Counter</h1>
 
+<h2>Counter @CascadingValue</h2>
+
+<Foo/>
+<Foo/>
+<Foo/>
+<Foo/>
+
 <p>Current count: @CurrentCount</p>
+<button class="btn btn-primary">Click me 2</button>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
 
 @code {
     [Parameter] public int CurrentCount { get; set; }
     [Parameter] public EventCallback<int> CurrentCountChanged { get; set; }
+    [CascadingParameter] public int CascadingValue { get; set; }
 
-    public List<string> _strings;
+    public List<string> _strings = new();
 
     private void IncrementCount()
     {
         CurrentCount++;
         CurrentCountChanged.InvokeAsync(CurrentCount);
+    }
+
+    protected override void OnInitialized()
+    {
+        _strings.Add(AverageCountService.GetAverage().ToString());
+        base.OnInitialized();
     }
 }

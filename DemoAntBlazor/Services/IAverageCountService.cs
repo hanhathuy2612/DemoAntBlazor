@@ -13,7 +13,7 @@ namespace DemoAntBlazor.Services
     {
         public int GetAverage()
         {
-            return 5;
+            return 50;
         }
     }
 }

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAntBlazor", "DemoAntBlazor\DemoAntBlazor.csproj", "{8F88E42E-D06F-4DE8-9B7C-5B8A9F2B878D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoAntBlazor", "DemoAntBlazor\DemoAntBlazor.csproj", "{8F88E42E-D06F-4DE8-9B7C-5B8A9F2B878D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bUnitTest", "bUnitTest\bUnitTest.csproj", "{0ACCF192-F858-4C97-A061-E702876F86AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bUnitTest", "bUnitTest\bUnitTest.csproj", "{0ACCF192-F858-4C97-A061-E702876F86AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

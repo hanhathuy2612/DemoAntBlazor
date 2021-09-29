@@ -32,7 +32,7 @@ namespace DemoAntBlazor
             services.AddSingleton<WeatherForecastService>();
 
             services.AddAntDesign();
-            //services.add<IAverageCountService, AverageCountService>;
+            services.AddSingleton<IAverageCountService, AverageCountService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
